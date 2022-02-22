@@ -1,32 +1,45 @@
 {
-  "name": "@plasmo-corp/qtt",
-  "version": "1.2.0",
-  "description": "",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "bin": "./dist/index.js",
+  "name": "@plasmo-corp/rps",
+  "version": "1.0.0",
+  "description": "Run scripts in parallel or in sequence.",
+  "bin": {
+    "run-s": "./dist/run-s.js",
+    "run-p": "./dist/run-p.js"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only index.ts",
-    "start": "ts-node --transpile-only index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only",
+    "start": "ts-node --transpile-only",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build",
-    "prepare": "pnpm run build"
+    "build": "esbuild src/run-p.ts src/run-s.ts --bundle --platform=node --outdir=dist",
+    "prepare": "pnpm run clean && pnpm run build",
+    "clean": "rimraf dist"
   },
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "@swc/core": "1.2.143",
     "@swc/helpers": "0.3.3",
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
+    "@types/minimatch": "^3.0.5",
+    "@types/cross-spawn": "^6.0.2",
     "@types/node": "17.0.18",
+    "@types/shell-quote": "^1.7.1",
+    "esbuild": "^0.14.23",
     "prettier": "2.5.1",
     "regenerator-runtime": "0.13.9",
+    "rimraf": "^3.0.2",
     "ts-node": "10.5.0",
     "ts-node-dev": "1.1.8",
     "typescript": "4.5.5"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "minimatch": "^5.0.0",
+    "pidtree": "^0.5.0",
+    "read-pkg": "^7.1.0",
+    "shell-quote": "^1.7.3"
   }
 }
