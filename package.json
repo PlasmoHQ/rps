@@ -1,6 +1,6 @@
 {
   "name": "@plasmo-corp/rps",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Run scripts in parallel or in sequence.",
   "bin": {
     "run-s": "./dist/run-s.js",

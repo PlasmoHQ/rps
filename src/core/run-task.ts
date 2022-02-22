@@ -38,7 +38,7 @@ function detectStreamKind(
     : /* else */ stream
 }
 
-function cleanTaskArg(arg: { pattern: any; op: any }) {
+function cleanTaskArg(arg: { pattern: string; op: string } & string) {
   return arg.pattern || arg.op || arg
 }
 
@@ -71,9 +71,11 @@ export async function runTask(
     const stderrKind = detectStreamKind(stderr, process.stderr)
     const spawnOptions = { stdio: [stdinKind, stdoutKind, stderrKind] }
 
-    const spawnArgs = [options.packageManager || "pnpm", "run"]
-
-    Array.prototype.push.apply(spawnArgs, parseArgs(task).map(cleanTaskArg))
+    const spawnArgs = [
+      options.packageManager || "pnpm",
+      "run",
+      ...parseArgs(task).map(cleanTaskArg)
+    ]
 
     const spawned = new Spawn(execPath, spawnArgs, spawnOptions)
 

@@ -1,4 +1,4 @@
-import { TaskOptions, runTask } from "./run-task"
+import { TaskOptions, TaskOutput, runTask } from "./run-task"
 
 const signalMap: Partial<Record<NodeJS.Signals, number>> = {
   SIGABRT: 6,
@@ -43,27 +43,54 @@ function lookupSignalCode(signal: NodeJS.Signals): number {
  * If a npm-script exited with a non-zero code, this aborts other all npm-scripts.
  */
 
-export async function runTaskList(tasks: string[], options: TaskOptions) {
+type TaskListOptions = {
+  parallel?: boolean
+} & TaskOptions
+
+export async function runTaskList(tasks: string[], options: TaskListOptions) {
   if (tasks.length === 0) {
     return []
   }
+  return options.parallel
+    ? await runParallel(tasks, options)
+    : await runSequential(tasks, options)
+}
 
-  const runResults = await Promise.allSettled(
+async function runParallel(tasks: string[], options: TaskListOptions) {
+  const results = await Promise.allSettled(
     tasks.map((task) => runTask(task, Object.assign({}, options)))
   )
 
-  return runResults.map((result) => {
+  return results.map((result) => {
     if (result.status === "rejected") {
+      console.error(result.reason)
       return null
     }
-    if (result.status === "fulfilled") {
-      if (result.value.code === null && result.value.signal !== null) {
-        // An exit caused by a signal must return a status code
-        // of 128 plus the value of the signal code.
-        // Ref: https://nodejs.org/api/process.html#process_exit_codes
-        result.value.code = 128 + lookupSignalCode(result.value.signal)
-      }
-    }
-    return result.value
+
+    return appendErrorCode(result.value)
   })
+}
+
+async function runSequential(tasks: string[], options: TaskListOptions) {
+  const output: TaskOutput[] = []
+  for (const task of tasks) {
+    try {
+      const result = await runTask(task, Object.assign({}, options))
+      output.push(appendErrorCode(result))
+    } catch (error) {
+      console.error(error)
+      output.push(null)
+    }
+  }
+  return output
+}
+
+function appendErrorCode(output: TaskOutput) {
+  if (output.code === null && output.signal !== null) {
+    // An exit caused by a signal must return a status code
+    // of 128 plus the value of the signal code.
+    // Ref: https://nodejs.org/api/process.html#process_exit_codes
+    output.code = 128 + lookupSignalCode(output.signal)
+  }
+  return output
 }

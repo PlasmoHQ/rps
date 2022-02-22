@@ -46,10 +46,6 @@ class TaskSet {
   /**
    * Adds a command (a pattern) into this set if it's not overlapped.
    * "Overlapped" is meaning that the command was added from a different source.
-   *
-   * @param {string} command - A pattern text to add.
-   * @param {string} source - A task name to check.
-   * @returns {void}
    */
   add(command: string, source: string): void {
     const sourceList = this.getSourceList(command)
