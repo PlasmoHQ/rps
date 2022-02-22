@@ -6,17 +6,26 @@ import { runAll } from "./core/run-all"
 import { supressMaxListenersExceededWarnings } from "./core/supress-error"
 
 async function runS() {
-  supressMaxListenersExceededWarnings()
+  try {
+    supressMaxListenersExceededWarnings()
 
-  const parsedArgv = parseCLIArgs(
-    argv,
-    { parallel: false },
-    { singleMode: true }
-  )
+    const parsedArgv = parseCLIArgs(
+      argv,
+      { parallel: false },
+      { singleMode: true }
+    )
 
-  const group = parsedArgv.lastGroup
+    const group = parsedArgv.lastGroup
 
-  return runAll(group.patterns, parsedArgv)
+    console.log({
+      parsedArgv
+    })
+
+    return runAll(group.patterns, parsedArgv)
+  } catch (error) {
+    console.error(error)
+    return null
+  }
 }
 
 runS()
