@@ -87,7 +87,10 @@ export async function runAll(
 
   const { taskList } = await readPackageJson()
 
-  console.log(taskList)
+  console.log({
+    patterns,
+    taskList
+  })
 
   const tasks = matchTasks(taskList, patterns)
 
