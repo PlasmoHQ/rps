@@ -1,6 +1,6 @@
 {
   "name": "@plasmo-corp/rps",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Run scripts in parallel or in sequence.",
   "main": "index.js",
   "types": "./dist/index.d.ts",
@@ -17,6 +17,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
     "prepare": "run-s clean build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://https://github.com/plasmo-corp/rps.git"
   },
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",

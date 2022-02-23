@@ -1,6 +1,6 @@
 # RPS
 
-Run pnpm/npm/yarn scripts in sequential or in parallel, cross-platform. This is a hard fork of [`npm-run-all`](https://github.com/mysticatea/npm-run-all/) with the following enhancement:
+Run pnpm/npm/yarn scripts in sequential or in parallel, cross-platform. This is a hard fork of [`npm-run-all`](https://github.com/mysticatea/npm-run-all/) with the following enhancement:x
 
 - Rewrite in Typescript, with esbuild bundling
 - Automated dependencies upkeep with renovate bot
@@ -58,7 +58,7 @@ run(["clean", "build"]) // sequential
 run(["watch", "serve"], true) // parallel
 ```
 
-# Acknoledgements
+# Acknowledgment
 
 - [npm-run-all](https://github.com/mysticatea/npm-run-all/)
 
