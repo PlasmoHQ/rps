@@ -1,7 +1,9 @@
 {
   "name": "@plasmo-corp/rps",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Run scripts in parallel or in sequence.",
+  "main": "index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
     "run-s": "./dist/run-s.js",
     "run-p": "./dist/run-p.js"
@@ -24,7 +26,7 @@
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
     "@types/minimatch": "3.0.5",
     "@types/cross-spawn": "6.0.2",
-    "@types/node": "17.0.18",
+    "@types/node": "17.0.19",
     "@types/shell-quote": "1.7.1",
     "esbuild": "0.14.23",
     "prettier": "2.5.1",

@@ -37,12 +37,6 @@ function lookupSignalCode(signal: NodeJS.Signals): number {
 // Public Interface
 //------------------------------------------------------------------------------
 
-/**
- * Run npm-scripts of given names in parallel.
- *
- * If a npm-script exited with a non-zero code, this aborts other all npm-scripts.
- */
-
 type TaskListOptions = {
   parallel?: boolean
 } & TaskOptions
@@ -56,7 +50,7 @@ export async function runTaskList(tasks: string[], options: TaskListOptions) {
     : await runSequential(tasks, options)
 }
 
-async function runParallel(tasks: string[], options: TaskListOptions) {
+export async function runParallel(tasks: string[], options: TaskListOptions) {
   const results = await Promise.allSettled(
     tasks.map((task) => runTask(task, Object.assign({}, options)))
   )
@@ -71,7 +65,7 @@ async function runParallel(tasks: string[], options: TaskListOptions) {
   })
 }
 
-async function runSequential(tasks: string[], options: TaskListOptions) {
+export async function runSequential(tasks: string[], options: TaskListOptions) {
   const output: TaskOutput[] = []
   for (const task of tasks) {
     try {

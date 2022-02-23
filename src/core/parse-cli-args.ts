@@ -61,13 +61,11 @@ export class ArgumentSet {
   config = {}
   groups = [] as ArgumentGroup[]
   singleMode: boolean
-  packageConfig = createPackageConfig()
-
   arguments = [] as string[]
 
-  constructor(initialValues = {}, options: ArgumentSetOptions) {
-    this.packageConfig = createPackageConfig()
+  packageConfig = createPackageConfig()
 
+  constructor(initialValues = {}, options: ArgumentSetOptions) {
     this.singleMode = Boolean(options && options.singleMode)
 
     addToGroup(this.groups, initialValues)
