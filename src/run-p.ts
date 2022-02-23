@@ -10,7 +10,7 @@ async function runP() {
     supressMaxListenersExceededWarnings()
 
     const parsedArgv = parseCLIArgs(
-      argv,
+      argv.slice(2),
       { parallel: true },
       { singleMode: true }
     )

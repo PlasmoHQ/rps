@@ -94,5 +94,5 @@ export async function runAll(
 
   const tasks = matchTasks(taskList, patterns)
 
-  return runTaskList(tasks, io)
+  return runTaskList(tasks, { ...io, parallel: args.parallel })
 }
