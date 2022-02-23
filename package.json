@@ -19,7 +19,7 @@
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",
   "devDependencies": {
-    "@swc/core": "1.2.143",
+    "@swc/core": "1.2.144",
     "@swc/helpers": "0.3.3",
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
     "@types/minimatch": "^3.0.5",
