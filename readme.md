@@ -19,17 +19,17 @@ pnpm i -D @plasmo-corp/rps
 Then, in your package.json scripts, you can replace sequential script with `run-s`:
 
 ```json
-  "prepare": "pnpm run clean && pnpm run build"
-  --- INTO
-  "prepare": "run-s clean build"
+---  "prepare": "pnpm run clean && pnpm run build"
+
++++  "prepare": "run-s clean build"
 ```
 
 Or parallel script with `run-p`:
 
 ```json
-  "start": "pnpm run watch & pnpm run serve"
-  --- INTO
-  "start": "run-p watch serve"
+---  "start": "pnpm run watch & pnpm run serve"
+
++++  "start": "run-p watch serve"
 ```
 
 You can also use glob patterns:
