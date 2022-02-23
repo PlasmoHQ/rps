@@ -1,4 +1,4 @@
-import { execPath } from "process"
+import { env, execPath } from "process"
 import { parse as parseArgs } from "shell-quote"
 import type { Readable, Stream, Writable } from "stream"
 
@@ -77,6 +77,9 @@ export async function runTask(
       ...parseArgs(task).map(cleanTaskArg)
     ]
 
+    console.log(env)
+
+    return
     const spawned = new Spawn(execPath, spawnArgs, spawnOptions)
 
     const childProcess = spawned.child
