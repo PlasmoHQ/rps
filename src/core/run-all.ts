@@ -87,11 +87,6 @@ export async function runAll(
 
   const { taskList } = await readPackageJson()
 
-  console.log({
-    patterns,
-    taskList
-  })
-
   const tasks = matchTasks(taskList, patterns)
 
   return runTaskList(tasks, { ...io, parallel: args.parallel })

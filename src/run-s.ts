@@ -17,11 +17,6 @@ async function runS() {
 
     const group = parsedArgv.lastGroup
 
-    console.log({
-      parsedArgv,
-      group
-    })
-
     return runAll(group.patterns, parsedArgv)
   } catch (error) {
     console.error(error)

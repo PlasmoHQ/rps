@@ -1,4 +1,4 @@
-import { env, execPath } from "process"
+import { extname } from "path"
 import { parse as parseArgs } from "shell-quote"
 import type { Readable, Stream, Writable } from "stream"
 
@@ -71,15 +71,18 @@ export async function runTask(
     const stderrKind = detectStreamKind(stderr, process.stderr)
     const spawnOptions = { stdio: [stdinKind, stdoutKind, stderrKind] }
 
-    const spawnArgs = [
-      options.packageManager || "pnpm",
-      "run",
-      ...parseArgs(task).map(cleanTaskArg)
-    ]
+    const spawnArgs = ["run", ...parseArgs(task).map(cleanTaskArg)]
 
-    console.log(env)
+    const pmPath = options.packageManager || process.env.npm_execpath
+    const pmPathIsJs =
+      typeof pmPath === "string" && /\.m?js/.test(extname(pmPath))
+    // If pm is a source file, we invoke it with node
 
-    return
+    const execPath = !pmPathIsJs ? pmPath : process.execPath
+    if (pmPathIsJs) {
+      spawnArgs.unshift(pmPath)
+    }
+
     const spawned = new Spawn(execPath, spawnArgs, spawnOptions)
 
     const childProcess = spawned.child
