@@ -16,10 +16,5 @@
     "allowJs": true,
     "importsNotUsedAsValues": "error"
   },
-  "include": ["src/**/*.ts"],
-  "ts-node": {
-    "transpileOnly": true,
-    "resolveJsonModule": true,
-    "transpiler": "ts-node/transpilers/swc-experimental"
-  }
+  "include": ["src/**/*.ts"]
 }
