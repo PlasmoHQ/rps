@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "baseUrl": ".",
+    "baseUrl": "src",
+    "declaration": true,
     "resolveJsonModule": true,
     "strict": false,
     "allowSyntheticDefaultImports": true,
