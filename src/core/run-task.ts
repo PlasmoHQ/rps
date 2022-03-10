@@ -1,3 +1,4 @@
+import type { IOType } from "child_process"
 import { extname } from "path"
 import { parse as parseArgs } from "shell-quote"
 import type { Readable, Stream, Writable } from "stream"
@@ -29,7 +30,7 @@ function detectStreamKind(
     | (NodeJS.ReadStream & { fd: 0 })
     | (NodeJS.WriteStream & { fd: 1 })
     | (NodeJS.WriteStream & { fd: 2 })
-) {
+): IOType | Stream {
   return stream == null
     ? "ignore"
     : // `|| !std.isTTY` is needed for the workaround of https://github.com/nodejs/node/issues/5620
