@@ -1,4 +1,4 @@
-import type { ChildProcess } from "child_process"
+import type { ChildProcess, SpawnOptions } from "child_process"
 import crossSpawn from "cross-spawn"
 import pidtree from "pidtree"
 import { kill, platform } from "process"
@@ -6,7 +6,7 @@ import { kill, platform } from "process"
 export class Spawn {
   child: ChildProcess
 
-  constructor(command: string, args: string[], options: any) {
+  constructor(command: string, args: string[], options: SpawnOptions) {
     this.child = crossSpawn(command, args, options)
 
     process.on("SIGINT", () => this.kill())
