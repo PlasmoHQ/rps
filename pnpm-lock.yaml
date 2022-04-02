@@ -11,7 +11,7 @@ specifiers:
   esbuild: 0.14.25
   minimatch: 5.0.1
   pidtree: 0.5.0
-  prettier: 2.5.1
+  prettier: 2.6.2
   read-pkg: 7.1.0
   rimraf: 3.0.2
   shell-quote: 1.7.3
@@ -26,13 +26,13 @@ dependencies:
 
 devDependencies:
   '@plasmo-corp/rps': 1.1.0
-  '@trivago/prettier-plugin-sort-imports': 3.2.0_prettier@2.5.1
+  '@trivago/prettier-plugin-sort-imports': 3.2.0_prettier@2.6.2
   '@types/cross-spawn': 6.0.2
   '@types/minimatch': 3.0.5
   '@types/node': 17.0.21
   '@types/shell-quote': 1.7.1
   esbuild: 0.14.25
-  prettier: 2.5.1
+  prettier: 2.6.2
   rimraf: 3.0.2
   typescript: 4.6.2
 
@@ -280,7 +280,7 @@ packages:
       shell-quote: 1.7.3
     dev: true
 
-  /@trivago/prettier-plugin-sort-imports/3.2.0_prettier@2.5.1:
+  /@trivago/prettier-plugin-sort-imports/3.2.0_prettier@2.6.2:
     resolution: {integrity: sha512-DnwLe+z8t/dZX5xBbYZV1+C5STkyK/P6SSq3Nk6NXlJZsgvDZX2eN4ND7bMFgGV/NL/YChWzcNf6ziGba1ktQQ==}
     peerDependencies:
       prettier: 2.x
@@ -292,7 +292,7 @@ packages:
       '@babel/types': 7.13.0
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
-      prettier: 2.5.1
+      prettier: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -804,8 +804,8 @@ packages:
     engines: {node: '>=0.10'}
     hasBin: true
 
-  /prettier/2.5.1:
-    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
+  /prettier/2.6.2:
+    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
