@@ -1,6 +1,6 @@
 {
   "name": "@plasmo-corp/rps",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Run scripts in parallel or in sequence.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
