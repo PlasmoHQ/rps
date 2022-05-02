@@ -27,7 +27,7 @@
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",
   "devDependencies": {
-    "@plasmo-corp/rps": "workspace:1.2.1",
+    "@plasmo-corp/rps": "1.2.1",
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
     "@types/cross-spawn": "6.0.2",
     "@types/minimatch": "3.0.5",
