@@ -16,6 +16,7 @@
     "dev": "tsup src/run-p.ts src/run-s.ts src/index.ts --watch --sourcemap",
     "build": "tsup src/run-p.ts src/run-s.ts src/index.ts --dts-resolve --format esm --minify --clean",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "pnpm build",
     "prepublishOnly": "run-s build"
   },
   "repository": {
