@@ -13,7 +13,7 @@ Run pnpm/npm/yarn scripts in sequential or in parallel, cross-platform. This is 
 Install the package as a dev dependency, swapping `pnpm` with your preferred package manager:
 
 ```bash
-pnpm i -D @plasmo-corp/rps
+pnpm i -D @PlasmoHQ/rps
 ```
 
 Then, in your package.json scripts, you can replace sequential script with `run-s`:
@@ -51,7 +51,7 @@ You can import the runners from this module and use it like so:
 
 ```ts
 #!/usr/bin/env node
-import { run } from "@plasmo-corp/rps"
+import { run } from "@PlasmoHQ/rps"
 
 run(["clean", "build"]) // sequential
 
