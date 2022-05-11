@@ -1,10 +1,10 @@
 # RPS
 
-Run pnpm/npm/yarn scripts in sequential or in parallel, cross-platform. This is a hard fork of [`npm-run-all`](https://github.com/mysticatea/npm-run-all/) with the following enhancement:x
+Run pnpm/npm/yarn scripts in sequential or in parallel, cross-platform. This is a hard fork of [`npm-run-all`](https://github.com/mysticatea/npm-run-all/) with the following enhancements:
 
 - Rewrite in Typescript, with esbuild bundling
 - Automated dependencies upkeep with renovate bot
-- Run logic are decoupled between syncronous vs asyncronous, allowing much cleaner spawn code, [audit it here](https://github.com/plasmo-corp/rps/blob/main/src/core/run-task-list.ts#L50-L57)
+- Run logic are decoupled between syncronous vs asyncronous, allowing much cleaner spawn code, [audit it here](https://github.com/PlasmoHQ/rps/blob/main/src/core/run-task-list.ts#L50-L57)
 
 # Usage
 
