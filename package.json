@@ -28,10 +28,10 @@
     "@plasmohq/prettier-plugin-sort-imports": "workspace:*",
     "@types/cross-spawn": "6.0.2",
     "@types/minimatch": "3.0.5",
-    "@types/node": "18.6.5",
+    "@types/node": "18.7.2",
     "@types/shell-quote": "1.7.1",
     "prettier": "2.7.1",
-    "tsup": "6.2.1",
+    "tsup": "6.2.2",
     "typescript": "4.7.4"
   },
   "dependencies": {
