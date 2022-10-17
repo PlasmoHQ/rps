@@ -28,10 +28,10 @@
     "@plasmohq/prettier-plugin-sort-imports": "workspace:*",
     "@types/cross-spawn": "6.0.2",
     "@types/minimatch": "5.1.2",
-    "@types/node": "18.8.3",
+    "@types/node": "18.11.0",
     "@types/shell-quote": "1.7.1",
     "prettier": "2.7.1",
-    "tsup": "6.2.3",
+    "tsup": "6.3.0",
     "typescript": "4.8.4"
   },
   "dependencies": {
@@ -39,6 +39,6 @@
     "minimatch": "5.1.0",
     "pidtree": "0.6.0",
     "read-pkg": "7.1.0",
-    "shell-quote": "1.7.3"
+    "shell-quote": "1.7.4"
   }
 }
