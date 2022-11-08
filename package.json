@@ -1,15 +1,16 @@
 {
   "name": "@plasmohq/rps",
-  "version": "1.5.3",
+  "version": "1.6.0",
   "description": "Run scripts in parallel or in sequence.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "bin": {
-    "run-s": "./dist/run-s.js",
-    "run-p": "./dist/run-p.js"
+    "run-s": "./bin/run-s.mjs",
+    "run-p": "./bin/run-p.mjs"
   },
   "files": [
+    "bin",
     "dist"
   ],
   "scripts": {
