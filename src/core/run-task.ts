@@ -3,7 +3,7 @@ import { extname } from "path"
 import { parse as parseArgs } from "shell-quote"
 import type { Readable, Stream, Writable } from "stream"
 
-import { LabelState, PrefixTransform } from "./prefix-transform"
+import { type LabelState, PrefixTransform } from "./prefix-transform"
 import { Spawn } from "./spawn"
 
 function wrapLabeling(

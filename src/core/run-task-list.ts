@@ -1,4 +1,4 @@
-import { TaskOptions, TaskOutput, runTask } from "./run-task"
+import { type TaskOptions, type TaskOutput, runTask } from "./run-task"
 
 const signalMap: Partial<Record<NodeJS.Signals, number>> = {
   SIGABRT: 6,
