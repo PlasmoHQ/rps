@@ -33,13 +33,13 @@
     "@types/shell-quote": "1.7.1",
     "prettier": "2.8.7",
     "tsup": "6.7.0",
-    "typescript": "5.0.3"
+    "typescript": "5.0.4"
   },
   "dependencies": {
     "cross-spawn": "7.0.3",
-    "minimatch": "8.0.3",
+    "minimatch": "9.0.0",
     "pidtree": "0.6.0",
-    "read-pkg": "7.1.0",
-    "shell-quote": "1.8.0"
+    "read-pkg": "8.0.0",
+    "shell-quote": "1.8.1"
   }
 }

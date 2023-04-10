@@ -1,4 +1,4 @@
-import MiniM from "minimatch"
+import { Minimatch } from "minimatch"
 
 //------------------------------------------------------------------------------
 // Helpers
@@ -30,7 +30,7 @@ function createFilter(pattern: string): {
   const spacePos = trimmed.indexOf(" ")
   const task = spacePos < 0 ? trimmed : trimmed.slice(0, spacePos)
   const args = spacePos < 0 ? "" : trimmed.slice(spacePos)
-  const matcher = new MiniM.Minimatch(swapColonAndSlash(task), {
+  const matcher = new Minimatch(swapColonAndSlash(task), {
     nonegate: true
   })
   const match = matcher.match.bind(matcher)
