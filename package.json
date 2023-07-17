@@ -26,7 +26,6 @@
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",
   "devDependencies": {
-    "@plasmohq/prettier-plugin-sort-imports": "workspace:*",
     "@types/cross-spawn": "6.0.2",
     "@types/minimatch": "5.1.2",
     "@types/node": "20.4.2",

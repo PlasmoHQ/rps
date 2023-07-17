@@ -1,9 +1,9 @@
 import type { IOType } from "child_process"
 import { extname } from "path"
-import { parse as parseArgs } from "shell-quote"
 import type { Readable, Stream, Writable } from "stream"
+import { parse as parseArgs } from "shell-quote"
 
-import { type LabelState, PrefixTransform } from "./prefix-transform"
+import { PrefixTransform, type LabelState } from "./prefix-transform"
 import { Spawn } from "./spawn"
 
 function wrapLabeling(

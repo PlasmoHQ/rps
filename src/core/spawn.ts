@@ -1,7 +1,7 @@
 import type { ChildProcess, SpawnOptions } from "child_process"
+import { kill, platform } from "process"
 import crossSpawn from "cross-spawn"
 import pidtree from "pidtree"
-import { kill, platform } from "process"
 
 export class Spawn {
   child: ChildProcess
