@@ -26,19 +26,19 @@
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/cross-spawn": "6.0.2",
+    "@types/cross-spawn": "6.0.3",
     "@types/minimatch": "5.1.2",
-    "@types/node": "20.5.0",
+    "@types/node": "20.5.9",
     "@types/shell-quote": "1.7.1",
-    "prettier": "3.0.2",
+    "prettier": "3.0.3",
     "tsup": "7.2.0",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   },
   "dependencies": {
     "cross-spawn": "7.0.3",
     "minimatch": "9.0.3",
     "pidtree": "0.6.0",
-    "read-pkg": "8.0.0",
+    "read-pkg": "8.1.0",
     "shell-quote": "1.8.1"
   }
 }
