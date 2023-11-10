@@ -26,10 +26,10 @@
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/cross-spawn": "6.0.3",
+    "@types/cross-spawn": "6.0.5",
     "@types/minimatch": "5.1.2",
-    "@types/node": "20.5.9",
-    "@types/shell-quote": "1.7.1",
+    "@types/node": "20.9.0",
+    "@types/shell-quote": "1.7.4",
     "prettier": "3.0.3",
     "tsup": "7.2.0",
     "typescript": "5.2.2"
