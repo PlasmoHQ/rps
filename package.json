@@ -35,7 +35,7 @@
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "cross-spawn": "7.0.3",
+    "cross-spawn": "7.0.5",
     "minimatch": "9.0.3",
     "pidtree": "0.6.0",
     "read-pkg": "9.0.1",
